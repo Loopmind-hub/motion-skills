@@ -1,0 +1,45 @@
+{
+ "_why": "The brand lock. Decided BEFORE any frame exists, then never broken inside the piece. apple_audit.py enforces every field. To the audience, a rule followed everywhere reads as intention.",
+ "name": "<brand> — <video type>",
+
+ "palette": {
+  "bg": "#0B0B0C",
+  "ink": "#F5F5F7",
+  "accent": "#2997FF"
+ },
+ "_palette_rule": "Exactly 3. bg = the field, ink = type and product edges, accent = ONE thing per shot (a highlight, never a wash). Alpha variants of these are fine. Anything else goes in extra_allowed with a reason, or it doesn't go in.",
+ "extra_allowed": [],
+
+ "type": {
+  "families": ["Inter"],
+  "weights": [400, 600],
+  "_rule": "One family. Two weights. Headlines tight (-0.02em), body normal. SF Pro only inside Apple-UI mockups (licence)."
+ },
+
+ "background": "Flat bg with at most one slow, low-contrast light falloff. It never moves faster than the product and never competes with it.",
+
+ "music": {
+  "bpm": [90, 110],
+  "feel": "smooth, effortless",
+  "_bands": "60–80 regal/cinematic · 90–110 smooth/effortless · 115–123 kinetic/sophisticated (a practitioner's convention, not measured — pick by the brand's feel, then stay in the band)",
+  "instruments": ["pad", "pluck", "sub", "kick"]
+ },
+
+ "sfx": {
+  "max_per_10s": 3,
+  "max_types": 3,
+  "banned": ["snare_roll", "typing", "clap"],
+  "_rule": "Every SFX must help the viewer understand the product. After the mix: remove any that feels loud, decorative or out of place."
+ },
+
+ "camera": { "punches": 1, "shakes": 0 },
+
+ "shots": {
+  "min_s": 1.2,
+  "max_cuts": 1,
+  "min_rhythm_cv": 0.15,
+  "_rule": "One shot = one idea. Key object centred. Each shot gets room to breathe. Transitions carry the eye (match, morph, push, mask, dissolve); a hard cut only when the cut IS the message."
+ },
+
+ "banned": ["glitch", "particles", "chromatic aberration", "elastic/bounce easing", "lens flares", "stacked grain+vignette+CA", "rap/trap stems", "more than one accent per shot"]
+}

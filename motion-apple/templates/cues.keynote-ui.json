@@ -1,0 +1,37 @@
+{
+ "title": "<brand> — keynote-ui explainer",
+ "bpm": 88,
+ "duration": 20.0,
+ "lufs": -14.0,
+ "true_peak": -1.0,
+ "chords": ["Dmaj7", "Bm7", "Gmaj7", "A"],
+ "marks": {
+  "hook": 0.0, "problem": 2.4, "answer": 5.2, "morph": 8.0,
+  "promise": 10.4, "name": 12.8, "tag": 16.0, "end": 20.0
+ },
+ "shots": [
+  { "id": "hook",    "at": "hook",    "in": "open",  "field": "light", "idea": "the customer's question, word by word" },
+  { "id": "problem", "at": "problem", "in": "cut",   "field": "dark",  "idea": "a widget shows nobody answering" },
+  { "id": "answer",  "at": "answer",  "in": "cut",   "field": "light", "idea": "the real answer, the key fact selected" },
+  { "id": "morph",   "at": "morph",   "in": "morph", "field": "dark",  "idea": "the selection becomes the booking" },
+  { "id": "promise", "at": "promise", "in": "cut",   "field": "light", "idea": "the promise, typed" },
+  { "id": "name",    "at": "name",    "in": "cut",   "field": "dark",  "idea": "the icon becomes the name" },
+  { "id": "tag",     "at": "tag",     "in": "match", "field": "dark",  "idea": "the tagline under the name" }
+ ],
+ "camera": { "moves": [], "punches": [], "shakes": [] },
+ "layers": [
+  { "inst": "pad",   "from_mark": "hook",    "to_mark": "end",   "cutoff": 500, "cutoff_to": 1400, "gain_db": -4 },
+  { "inst": "sub",   "from_mark": "hook",    "to_mark": "end",   "pattern": "x.......x.......", "len_steps": 7, "gain_db": -5 },
+  { "inst": "pluck", "from_mark": "problem", "to_mark": "tag",   "pattern": "x..x..x.x..x..x.", "gain_db": -11 }
+ ],
+ "fx": [
+  { "type": "blip",    "at": { "mark": "problem", "dt": 0.05 }, "gain_db": -8 },
+  { "type": "ratchet", "at": { "mark": "problem", "dt": 0.7 }, "len": 0.9, "gain_db": -12 },
+  { "type": "blip",    "at": { "mark": "answer", "dt": -0.04 }, "notes": [12, 7, 3, 0], "gain_db": -8 },
+  { "type": "shimmer", "at": { "mark": "morph", "dt": -0.35 }, "len": 0.6, "gain_db": -6 },
+  { "type": "whoosh",  "at": { "mark": "promise", "dt": -0.18 }, "len": 0.35, "gain_db": -16 },
+  { "type": "blip",    "at": { "mark": "name", "dt": 0.1 }, "freq": 1175, "gain_db": -8 },
+  { "type": "blip",    "at": { "mark": "tag", "dt": -0.04 }, "notes": [12, 7, 3, 0], "gain_db": -9 }
+ ],
+ "mix": { "pump_db": 0.0, "music_db": -1.0, "sfx_db": -1.0, "reverb_db": -8.0 }
+}

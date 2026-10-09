@@ -1,0 +1,56 @@
+{
+ "_why": "The keynote-ui register: Apple-keynote UI explainer — kinetic words + iOS-style widgets, page-turn cuts that flip the field, UI springs with a small overshoot, shutter motion blur on everything fast. Distilled and MEASURED from a reference on 2026-10-08 (references/preset-keynote-ui.md). Same lock discipline as the film register: decided before any frame, never broken.",
+ "name": "<brand> — keynote-ui",
+ "register": "keynote-ui",
+
+ "palette": {
+  "bg": "#F2F2F4",
+  "ink": "#16161A",
+  "accent": "#2997FF"
+ },
+ "_palette_rule": "3 colours. The FIELD alternates bg ↔ ink between shots (light page / dark page); on a dark field the ink becomes the type colour bg. Accent = ONE thing per shot. Card white or tints go in extra_allowed with a reason.",
+ "extra_allowed": ["#FFFFFF"],
+
+ "type": {
+  "families": ["Inter"],
+  "weights": [500, 700],
+  "_rule": "One family. Words land one at a time. Headline 6–10 % of frame height, sub-line 2–3 %."
+ },
+
+ "background": "Flat field with a soft radial light (centre +4 % luma) and, optionally, a faint 1 px grid at 4 % alpha. The field flips light↔dark on every hard cut.",
+
+ "music": {
+  "bpm": [78, 96],
+  "feel": "calm electronic, sub-heavy, plucked arpeggio over a sustained pad (reference measured 83 BPM)",
+  "_bands": "60–80 regal/cinematic · 90–110 smooth/effortless · 115–123 kinetic (practitioner convention); keynote-ui sits at the low edge of smooth",
+  "instruments": ["pad", "pluck", "sub"]
+ },
+
+ "sfx": {
+  "max_per_10s": 7,
+  "max_types": 4,
+  "banned": ["snare_roll", "clap", "impact"],
+  "_rule": "UI sounds, never cinematic hits: blip (an object lands), ratchet (a value rolls), shimmer (a morph), whoosh (a page turn, soft). Each names the event it marks."
+ },
+
+ "camera": { "punches": 0, "shakes": 0 },
+
+ "shots": {
+  "min_s": 1.2,
+  "max_cuts": 7,
+  "cut_flips_field": true,
+  "min_rhythm_cv": 0.12,
+  "_rule": "A cut is a page turn: it lands on a phrase AND flips the field. Inside a page, objects morph into each other (pill → pill, rectangle → card, dot → icon → widget)."
+ },
+
+ "motion": {
+  "blur_required": true,
+  "spring_ui": { "zeta": 0.68, "omega": 17 },
+  "spring_type": { "zeta": 1.0, "omega": 14 },
+  "shutter_angle": 720,
+  "_shutter": "720° at 60 fps = the reference's 33 ms exposure at 30 fps (gotcha 31).",
+  "_rule": "Objects land on MS.SPRINGS.ui (~5 % overshoot, settled by 0.62 s), words on settle. Exits accelerate (power3.in, 0.25–0.35 s) and smear. Blur comes from the shutter, never a CSS blur on a moving thing."
+ },
+
+ "banned": ["glitch", "particles", "chromatic aberration", "lens flares", "camera shake", "per-beat pulses", "linear moves except a hold drift", "more than one accent per shot"]
+}

@@ -1,0 +1,45 @@
+{
+ "title": "<brand> — premium product film",
+ "bpm": 100,
+ "duration": 20.0,
+ "lufs": -14.0,
+ "true_peak": -1.0,
+ "chords": ["Dmaj7", "Bm7", "Gmaj7", "A"],
+ "marks": {
+  "open": 0.0, "detail": 3.6, "feature1": 7.2, "feature2": 9.6,
+  "breath": 11.6, "reveal": 12.0, "name": 16.0, "end": 20.0
+ },
+ "shots": [
+  { "id": "open",     "at": "open",     "in": "open",     "idea": "the product alone in the dark" },
+  { "id": "detail",   "at": "detail",   "in": "push",     "idea": "the camera travels to the one detail that matters" },
+  { "id": "feature1", "at": "feature1", "in": "match",    "idea": "the first thing it does" },
+  { "id": "feature2", "at": "feature2", "in": "morph",    "idea": "the second thing it does" },
+  { "id": "reveal",   "at": "reveal",   "in": "cut",      "idea": "the promise, full frame" },
+  { "id": "name",     "at": "name",     "in": "dissolve", "idea": "the name, calm" }
+ ],
+ "camera": {
+  "moves": [
+   { "t": "open", "s": 1.0, "w": 6 },
+   { "t": "detail", "dt": -0.3, "s": 1.12, "w": 5 },
+   { "t": "feature1", "s": 1.0, "w": 7 },
+   { "t": "breath", "s": 1.03, "w": 3 },
+   { "t": "name", "s": 1.0, "w": 4 }
+  ],
+  "punches": [ { "t": "reveal", "a": 0.02 } ],
+  "shakes": []
+ },
+ "layers": [
+  { "inst": "pad",   "from_mark": "open",     "to_mark": "reveal", "cutoff": 400, "cutoff_to": 1600, "gain_db": -2 },
+  { "inst": "pluck", "from_mark": "detail",   "to_mark": "breath", "pattern": "x.....x.....x...", "gain_db": -8 },
+  { "inst": "sub",   "from_mark": "feature1", "to_mark": "breath", "pattern": "x.......x.......", "len_steps": 6, "gain_db": -6 },
+  { "inst": "kick",  "from_mark": "feature1", "to_mark": "breath", "pattern": "x.......x.......", "gain_db": -9 },
+  { "inst": "pad",   "from_mark": "reveal",   "to_bar": 999, "cutoff": 2200, "cutoff_to": 700, "gain_db": -1 },
+  { "inst": "pluck", "from_mark": "reveal",   "to_mark": "name", "pattern": "x.......x.......", "gain_db": -7 }
+ ],
+ "fx": [
+  { "type": "whoosh", "at": { "mark": "detail", "dt": -0.35 }, "len": 0.7, "pan_from": -0.4, "pan_to": 0.4, "gain_db": -12 },
+  { "type": "tick",   "at": { "mark": "feature2" }, "freq": 2400, "gain_db": -10 },
+  { "type": "impact", "at": { "mark": "reveal" }, "gain_db": -6, "reverb": 0.5 }
+ ],
+ "mix": { "pump_db": 0.0, "music_db": -1.0, "drums_db": -3.0, "sfx_db": -2.0, "reverb_db": -7.0 }
+}
