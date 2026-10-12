@@ -146,3 +146,7 @@ Other moves seen in reference 2 (S):
 | Conveyor line, picker wheel, cursor, 3D tilt-out, squash & stretch | composition patterns, no engine piece needed | ⏳ not yet used in an example |
 | Word-onset sync to a real VO | `/edit-distill` words.json gives the onsets; no voice in our first example | ⏳ when a piece has VO, drive the word rise from the onsets (gotcha 3: RMS, not Whisper) |
 | 3D objects on a grid (the reference's 23–28 s) | no 3D in the engine | ⏳ skip, or use a rendered still |
+
+## 10 · Banned by Freddy (2026-10-12)
+
+- **Decode / scramble text** (letters cycling through random glyphs until the word lands). Freddy: *«no me gusta… no los vuelvas a usar»*. Use the **depth-in** word entry instead (scale 1.9 → 1, blur 22 → 0 px, power3.out ≈ 0.55 s, on the VO onset), or a rise or mask.

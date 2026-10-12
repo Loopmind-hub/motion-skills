@@ -12,14 +12,13 @@ Two Claude Code skills that direct motion-graphics videos on [HyperFrames](https
 
 ## Install
 
-```bash
-git clone git@github.com:Loopmind-hub/motion-skills.git ~/projects/motion-skills
-ln -s ~/projects/motion-skills/motion-studio ~/.claude/skills/motion-studio
-ln -s ~/projects/motion-skills/motion-apple  ~/.claude/skills/motion-apple
-gh repo clone heygen-com/hyperframes ~/tools/hyperframes -- --depth 1   # the engine's registry (motion blur)
+Paste this into Claude Code (or any coding agent):
+
+```text
+Install the motion-apple skill by following https://github.com/Loopmind-hub/motion-skills/blob/main/INSTALL.md
 ```
 
-Python runs with `uv`; HyperFrames runs with `npx` (Chrome + FFmpeg).
+Or by hand, see [`INSTALL.md`](INSTALL.md). Python runs with `uv`; HyperFrames runs with `npx` (Chrome + FFmpeg).
 
 ## Tests
 
@@ -35,4 +34,8 @@ uv run --with pytest --with numpy --with scipy --with soundfile --with pyloudnor
 - `motion-apple/references/preset-keynote-ui.md` — every measured number, with its evidence tier.
 - `motion-studio/references/gotchas.md` — 34 traps, each one paid for in a real build.
 
-Worked example (approved 2026-10-08): the Servi AI keynote-ui film, `loopmind/clients/servi-ai/marketing/motion/keynote-20s/`.
+Worked examples: the Servi AI keynote-ui and launch films (2026-10), referenced inside the skills.
+
+## License
+
+MIT. HyperFrames is Apache 2.0 by HeyGen.
